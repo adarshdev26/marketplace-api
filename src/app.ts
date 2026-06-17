@@ -2,6 +2,7 @@ import express, { type NextFunction, type Request, type Response } from "express
 import cors from "cors";
 import authRoutes from "./modules/auth/auth.routes";
 import carRoutes from './modules/cart/cart.routes'
+import orderRoutes from './modules/order/order.routes'
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get("/health", (_req: Request, res: Response) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/cart", carRoutes);
+app.use("/api/order", orderRoutes);
 
 app.use((_req: Request, res: Response) => {
   res.status(404).json({ message: "Route not found" });
