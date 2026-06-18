@@ -3,6 +3,8 @@ import cors from "cors";
 import authRoutes from "./modules/auth/auth.routes";
 import carRoutes from './modules/cart/cart.routes'
 import orderRoutes from './modules/order/order.routes'
+import smsRoutes from './modules/sms/sms.routes'
+import productRoutes from './modules/product/product.routes'
 
 const app = express();
 
@@ -16,6 +18,8 @@ app.get("/health", (_req: Request, res: Response) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/cart", carRoutes);
 app.use("/api/order", orderRoutes);
+app.use("/api/sms", smsRoutes);
+app.use("/api/products", productRoutes);
 
 app.use((_req: Request, res: Response) => {
   res.status(404).json({ message: "Route not found" });
