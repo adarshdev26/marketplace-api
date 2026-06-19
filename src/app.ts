@@ -17,7 +17,7 @@ app.get("/health", (_req: Request, res: Response) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/cart", carRoutes);
-app.use("/api/order", orderRoutes);
+app.use("/api/orders", orderRoutes);
 app.use("/api/sms", smsRoutes);
 app.use("/api/products", productRoutes);
 
